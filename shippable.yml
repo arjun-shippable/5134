@@ -1,11 +1,13 @@
 language: node_js
 
-node_js: 0.12
+node_js:
+  - '0.10'
 
-build:
-  ci:
-    - echo "Hello, World!"
-    - echo "This is master"
-    - echo "This is ??????"
-    - echo "Hello, World!"
-    - echo "This is !!!!!!"
+services:
+  - selenium
+  
+# Make folders for the reports, and create the SQL db
+before_script:
+    - ps -e | grep Xvfb
+    - export DISPLAY=:99.0
+    - Xvfb :1 -screen 0 800x600x16
