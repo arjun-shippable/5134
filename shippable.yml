@@ -14,37 +14,30 @@ env:
     - SYMFONY__DATABASE__USER=shippable
     - SYMFONY__DATABASE__PASSWORD=
     - SYMFONY__CSS=dev
-    
-before_script:
-  - echo $FORTRABBIT_HOST
-  - echo $DEV_REPO
-  - echo $PROD_REPO
-  - echo $APP_ENV
-  - echo $SYMFONY__DATABASE__HOST
-  - echo $SYMFONY__DATABASE__PORT
-  - echo $SYMFONY__DATABASE__NAME
-  - echo $SYMFONY__DATABASE__USER
-  - echo $SYMFONY__CSS
 
-script:
-  - echo $FORTRABBIT_HOST
-  - echo $DEV_REPO
-  - echo $PROD_REPO
-  - echo $APP_ENV
-  - echo $SYMFONY__DATABASE__HOST
-  - echo $SYMFONY__DATABASE__PORT
-  - echo $SYMFONY__DATABASE__NAME
-  - echo $SYMFONY__DATABASE__USER
-  - echo $SYMFONY__CSS
+services:
+  - mysql
 
+build:
+  ci:
+   - echo $FORTRABBIT_HOST
+   - echo $DEV_REPO
+   - echo $PROD_REPO
+   - echo $APP_ENV
+   - echo $SYMFONY__DATABASE__HOST
+   - echo $SYMFONY__DATABASE__PORT
+   - echo $SYMFONY__DATABASE__NAME
+   - echo $SYMFONY__DATABASE__USER
+   - echo $SYMFONY__CSS
 
-after_script:
-  - echo $FORTRABBIT_HOST
-  - echo $DEV_REPO
-  - echo $PROD_REPO
-  - echo $APP_ENV
-  - echo $SYMFONY__DATABASE__HOST
-  - echo $SYMFONY__DATABASE__PORT
-  - echo $SYMFONY__DATABASE__NAME
-  - echo $SYMFONY__DATABASE__USER
-  - echo $SYMFONY__CSS
+  on_success:
+   - echo $FORTRABBIT_HOST
+   - echo $DEV_REPO
+   - echo $PROD_REPO
+   - echo $APP_ENV
+   - echo $SYMFONY__DATABASE__HOST
+   - echo $SYMFONY__DATABASE__PORT
+   - echo $SYMFONY__DATABASE__NAME
+   - echo $SYMFONY__DATABASE__USER
+   - echo $SYMFONY__CSS
+
