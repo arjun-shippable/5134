@@ -9,6 +9,5 @@ services:
 # Make folders for the reports, and create the SQL db
 build:
   ci:
-    - ps -e | grep Xvfb
     - export DISPLAY=:99.0
     - Xvfb :1 -screen 0 800x600x16
