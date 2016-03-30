@@ -1,12 +1,12 @@
-language: node_js
+language: php
 
-node_js: 0.12
+php:
+  - 5.6
 
-build:
-  ci:
-    - echo "Hello, World!"
-    - echo "This is master"
-    - echo "This is ??????"
-    - echo "Hello, World!"
-    - echo "This is !!!!!!"
-    - echo "Found shit a"
+services:
+  - mongodb
+  - memcached
+
+before_script:
+  - mkdir -p shippable/testresults
+  - mkdir -p shippable/codecoverage
