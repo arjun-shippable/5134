@@ -6,7 +6,3 @@ php:
 services:
   - mongodb
   - memcached
-
-before_script:
-  - mkdir -p shippable/testresults
-  - mkdir -p shippable/codecoverage
