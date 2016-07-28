@@ -19,7 +19,7 @@ integrations:
           only:
             - master
   notifications:
-    - integrationName: trigger_resource
+    - integrationName: triggerResource
       type: webhook
       payload:
         - resourceId=20
@@ -28,5 +28,6 @@ integrations:
         only:
           - master
       on_success: always
-      on_failure: never
-      on_start: never
+      on_failure: always
+      on_start: always
+      on_pull_request: always
