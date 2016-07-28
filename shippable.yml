@@ -21,9 +21,6 @@ integrations:
       payload:
         - resourceId=20
         - versionName=$BRANCH.$SHIPPABLE_BUILD_NUMBER
-      branches:
-        only:
-          - master
       on_success: always
       on_failure: always
       on_start: always
