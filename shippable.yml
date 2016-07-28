@@ -15,9 +15,6 @@ integrations:
   hub:
     - integrationName: "dockerhub"
       type: docker
-      branches:
-          only:
-            - master
   notifications:
     - integrationName: triggerResource
       type: webhook
