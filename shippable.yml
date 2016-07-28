@@ -22,8 +22,8 @@ integrations:
     - integrationName: trigger_resource
       type: webhook
       payload:
-        - resourceId=105
-        - versionName="$BRANCH.$SHIPPABLE_BUILD_NUMBER"
+        - resourceId=20
+        - versionName=$BRANCH.$SHIPPABLE_BUILD_NUMBER
       branches:
         only:
           - master
