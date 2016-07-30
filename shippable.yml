@@ -19,7 +19,6 @@ integrations:
     - integrationName: triggerResource
       type: webhook
       payload:
-        - resourceId=20
         - versionName=$BRANCH.$SHIPPABLE_BUILD_NUMBER
       on_success: always
       on_failure: always
